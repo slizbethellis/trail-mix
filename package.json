@@ -1,0 +1,26 @@
+{
+  "name": "trail-mix",
+  "version": "1.0.0",
+  "description": "An adventure game about a journey to a restaurant",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slizbethellis/trail-mix.git"
+  },
+  "author": "Sarah Ellis, Jenn Bono, Lonnie Laub, Mark Verbeck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slizbethellis/trail-mix/issues"
+  },
+  "homepage": "https://github.com/slizbethellis/trail-mix#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7",
+    "sequelize": "^4.31.1"
+  }
+}
