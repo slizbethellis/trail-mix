@@ -2,46 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
     <title>Trail Mix</title>
-</head>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/js/app.js"></script>
+  </head>
   <body>
-    <div class="center-align">
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Trail Mix</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Trail Mix Logo -->
+    <div class="text-center">
       <img src="../public/assets/img/trail mix logo.png" alt="Logo" height="200">
     </div>
 
-    <div class="center-align">
-      <h2>Available Adventures</h2>
+    <div class="text-center ava-adventures">
+      <h1 class="ava-adventures">Available Adventures</h1>
     </div>
 
-    <!-- Game Theme Logo -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+<!-- Link to Chip-O-Tae Game -->
+          <a href="">
+            <img class="rest-logo" src="../public/assets/img/Chipotae.png" alt="Chip-O-Tae Logo" height="125">
+          </a>
+        </div>
+<!-- Link to McBurger Game -->
+        <div class="col-md-4 text-center">
+          <a href="">
+            <img class="rest-logo" src="../public/assets/img/McBurger.png" alt="McBurger Logo" height="125">
+          </a>
+        </div>
+<!-- Link to Wendal's Game -->
+        <div class="col-md-4 text-center">
+          <a href="">
+            <img class="rest-logo" src="../public/assets/img/wendals.png" alt="Wendal's Logo" height="125">
+          </a>
+        </div>
+      </div>
+    </div>
 
-    <!-- Carousel Div -->
-    <div class="carousel">
-      <a href="#one!" class="carousel-item">
-        <img src="../public/assets/img/Chipotae1.png" alt="Chip-O-Tae Logo">
-      </a>
-      <a href="#two!" class="carousel-item">
-        <img src="../public/assets/img/McBurger-Logo1.png" alt="McBurger Logo">
-      </a>
-      <a href="#three!" class="carousel-item">
-        <img src="../public/assets/img/wendals1.png" alt="Wendals Logo">
-      </a>
+    <!-- Instructions -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center instructions">
+          <h1>Click on a restaurant to begin an adventure to possibly win a coupon to that restaurant!</h1>
+        </div>
+      </div>
     </div>
 
 
 
 
-
-
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src="/assets/js/app.js"></script>
-<script>
-  $(document).ready(function(){
-    // Init Carousel
-      $('.carousel').carousel();
-  });
-</script>
-</body>
+  </body>
+</html>
