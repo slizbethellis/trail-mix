@@ -12,7 +12,15 @@ CREATE TABLE customers
   cust_name varchar(255) NOT NULL,
   cust_password varchar(255) NOT NULL,
   cust_logo varchar(255) NOT NULL,
-	adventure_verbiage1 varchar(255),
+  adventures varchar(255),
+	date DATETIME,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE adventures
+(
+  id int NOT NULL AUTO_INCREMENT,
+  adventure_verbiage1 varchar(255),
   adventure_verbiage2 varchar(255),
   adventure_verbiage3 varchar(255),
   adventure_verbiage4 varchar(255),
@@ -20,6 +28,6 @@ CREATE TABLE customers
   adventure_image1 varchar(255),
   adventure_image2 varchar(255),
   adventure_image3 varchar(255),
-	date DATETIME,
-	PRIMARY KEY (id)
-);
+  date DATETIME,
+  PRIMARY KEY (id)
+)
