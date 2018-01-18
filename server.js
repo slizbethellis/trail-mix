@@ -8,6 +8,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 var db = require("./models");
+var oidc = require("okta.js")
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -26,7 +27,13 @@ require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({ force: true }).then(function() {
-    app.listen(PORT, function() {
-        console.log("App listening on PORT " + PORT);
+    oidc.on('ready', () => {
+        app.listen(PORT, function() {
+            console.log("App listening on PORT " + PORT);
+        });
+    });
+
+    oidc.on('error', err => {
+        console.log('Unable to configure ExpressOIDC', err);
     });
 });
