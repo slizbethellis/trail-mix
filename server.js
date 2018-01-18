@@ -19,7 +19,10 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static(path.join(__dirname + '/public')));
 
 // Routes
-require("./routes/  -routes.js")(app);
+var routes = require("./controllers/burgers_controller.js");
+
+app.use("/", routes);
+require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({ force: true }).then(function() {
