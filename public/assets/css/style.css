@@ -2,17 +2,26 @@ body {
   background: url("../img/background1.png");
 }
 
+.login-link {
+  color: gray;
+}
+
+.trail-logo {
+  margin-top: 15px;
+}
+
 .ava-adventures {
   font-family: 'Bowlby One SC', cursive;
   color: #7a5120;
   font-size: 50px;
 }
 
-.navbar {
-  background-color: #7a5120;
+.rest-logo {
+  margin-top: 5px;
 }
 
 .instructions {
   font-family: 'Bowlby One SC', cursive;
   color: #7a5120;
+  margin-top: 10px;
 }
