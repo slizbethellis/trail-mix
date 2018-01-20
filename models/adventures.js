@@ -1,8 +1,14 @@
-// export the adventure model
+// requires
+var db = require("../models");
 
+// export the adventure model
 module.exports = function(sequelize, DataTypes) {
   var Adventure = sequelize.define("Adventure",
     {
+      adventure_name: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
       adventure_verbiage1: {
         type: DataTypes.STRING,
         allowNull: true
@@ -35,23 +41,18 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: true
       }
+      customer_id: {
+        type: DataTypes.INTERGER,
+        allowNull: true
+      }
     });
-    
-    // associate with the customer
-    Adventure.associate = function(models) {
-      Adventure.belongsTo(models.Customer, {
-        onDelete: "CASCADE",
-        foreignKey: {
-          allowNull: true
-        }
-      });
-    };
-      //classMethods: {
-      //  associate: function(models) {
-      //    
-      //  }
-      //}
-    //});
+
+    // associate with the customer - use ID to pass adventures and customers back and forth
+    Adventure.belongsTo(db.Customer, {
+      onDelete: "CASCADE",
+      foreignKey: "id",
+      targetKey: "customer_id"
+    });
 
   return Adventure;
 };

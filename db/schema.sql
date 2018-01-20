@@ -1,5 +1,5 @@
 ### Trailmix schema
-### we may need customers and adventures tables. starting with customers
+DROP DATABASE IF EXISTS trail_mix_dev;
 
 CREATE DATABASE trail_mix_dev;
 
@@ -12,12 +12,13 @@ CREATE TABLE customers (
   cust_password varchar(255) NOT NULL,
   cust_logo varchar(255) NOT NULL,
   adventures varchar(255),
-	cust_date DATETIME,
+	cust_create_date DATETIME,
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE adventures (
   id int NOT NULL AUTO_INCREMENT,
+	cust_id int NOT NULL AUTO_INCREMENT,
   adventure_verbiage1 varchar(255),
   adventure_verbiage2 varchar(255),
   adventure_verbiage3 varchar(255),
@@ -26,6 +27,6 @@ CREATE TABLE adventures (
   adventure_image1 varchar(255),
   adventure_image2 varchar(255),
   adventure_image3 varchar(255),
-  advent_date DATETIME,
+  adventure_create_date DATETIME,
   PRIMARY KEY (id)
 );
