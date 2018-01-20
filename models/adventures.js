@@ -3,10 +3,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Adventure = sequelize.define("Adventure",
     {
-      id: {
-        type: DataTypes.INTERGER,
-        allowNull: false
-      },
       adventure_verbiage1: {
         type: DataTypes.STRING,
         allowNull: true
@@ -38,20 +34,24 @@ module.exports = function(sequelize, DataTypes) {
       adventure_image3: {
         type: DataTypes.STRING,
         allowNull: true
-      },
-    }, {
-      // associate with the customer
-      classMethods: {
-        associate: function(models) {
-          Adventure.belongsTo(models.Customer, {
-            onDelete: "CASCADE",
-            foreignKey: {
-              allowNull: true
-            }
-          });
-        }
       }
     });
+    
+    // associate with the customer
+    Adventure.associate = function(models) {
+      Adventure.belongsTo(models.Customer, {
+        onDelete: "CASCADE",
+        foreignKey: {
+          allowNull: true
+        }
+      });
+    };
+      //classMethods: {
+      //  associate: function(models) {
+      //    
+      //  }
+      //}
+    //});
 
   return Adventure;
 };

@@ -3,10 +3,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Customer = sequelize.define("Customer",
     {
-      id: {
-        type: DataTypes.INTERGER,
-        allowNull: false
-      },
       cust_email: {
         type: DataTypes.STRING,
         allowNull: false
@@ -23,11 +19,12 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: true
       },
+      // note: Sequelize's documentation says array is only an option for PostgreSQL
       adventures: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
+        type: DataTypes.TEXT,
         allowNull: true
-      },
-    }, {
+      }
+    });
 
   return Customer;
 };
