@@ -41,18 +41,18 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: true
       }
-      customer_id: {
-        type: DataTypes.INTERGER,
-        allowNull: true
-      }
     });
 
     // associate with the customer - use ID to pass adventures and customers back and forth
-    Adventure.belongsTo(db.Customer, {
-      onDelete: "CASCADE",
-      foreignKey: "id",
-      targetKey: "customer_id"
-    });
+    // This automatically creates a column called 'CustomerId'...don't add a similar field manually
+    Adventure.associate = function(models) {
+      Adventure.belongsTo(models.Customer, {
+        onDelete: "CASCADE",
+        foreignKey: {
+          allowNull: true
+        }
+      });
+    };
 
   return Adventure;
 };

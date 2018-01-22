@@ -16,11 +16,11 @@ module.exports = function(sequelize, DataTypes) {
       cust_password: {
         type: DataTypes.STRING,
         allowNull: false
-      }
+      },
       cust_logo: {
         type: DataTypes.STRING,
         allowNull: true
-      },
+      }
       // // note: Sequelize's documentation says array is only an option for PostgreSQL
       // adventures: {
       //   type: DataTypes.TEXT,
@@ -28,10 +28,10 @@ module.exports = function(sequelize, DataTypes) {
       // }
     });
 
-  Customer.hasMany(db.Adventures {
-    foreignKey: "customer_id",
-    sourceKey: "id"
-  });
+  // leave the .associate function wrapper intact
+  Customer.associate = function(models) {
+    Customer.hasMany(models.Adventure);
+  };
 
   return Customer;
 };
