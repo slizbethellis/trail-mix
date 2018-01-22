@@ -26,7 +26,7 @@ router.get("/admin/:id", function(req, res) {
   })
   .then(function(data) {
       // send all adventures for that customer_id
-      })
+  })
 });
 
 router.post("/admin/:id", function(req, res) {
@@ -42,10 +42,10 @@ router.post("/admin/:id", function(req, res) {
       adventure_image1: newAdv.adventure_image1,
       adventure_image2: newAdv.adventure_image2,
       adventure_image3: newAdv.adventure_image3,
-    }).then(
+    }).then(function () {
       // back to /admin/:id
-      res.sendFile(path.join(__dirname, "../public/admin.html");
-    });
-  });
+      res.sendFile(path.join(__dirname, "../public/admin.html"));
+    })
+});
 
 module.exports = router;
