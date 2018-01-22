@@ -7,29 +7,43 @@ var db = require("../models");
 
 // WORK IN PROGRESS
 router.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/test.html")
+  res.sendFile(path.join(__dirname, "../public/test.html"));
 });
 
 router.get("/admin", function(req, res) {
   // this needs to go to login page if not logged in
-  res.sendFile(path.join(__dirname, "../public/admin.html"), {
-    isLoggedIn: !!req.userinfo,
-    userinfo: req.userinfo
-  });
-});
-
-router.get("/admin/:id", function(req, res) {
-  db.Adventures.findAll({
+  db.Customer.findOne({
     where: {
-      customer_id: req.params.id
+      customer_email: req.userinfo.email
     }
+  }).then(function(dbPost) {
+    return dbPost;
+  }).then(db.Adventures.findAll({
+    where: {
+      CustomerId: dbPost.id
+    }
+  })).then(function(data) {
+    // send all adventures for that customer_id
+    res.sendFile(path.join(__dirname, "../public/admin.html"), {
+      isLoggedIn: !!req.userinfo,
+      userinfo: req.userinfo
+    });
   })
-  .then(function(data) {
-      // send all adventures for that customer_id
-      })
+  
 });
 
-router.post("/admin/:id", function(req, res) {
+//router.get("/admin/:id", function(req, res) {
+//  db.Adventures.findAll({
+//    where: {
+//      customer_id: req.params.id
+//    }
+//  })
+//  .then(function(data) {
+//      // send all adventures for that customer_id
+//  })
+//});
+
+router.post("/admin", function(req, res) {
     var newAdv = req.body;
 
     db.Adventures.create({
@@ -42,10 +56,10 @@ router.post("/admin/:id", function(req, res) {
       adventure_image1: newAdv.adventure_image1,
       adventure_image2: newAdv.adventure_image2,
       adventure_image3: newAdv.adventure_image3,
-    }).then(
+    }).then(function () {
       // back to /admin/:id
-      res.sendFile(path.join(__dirname, "../public/admin.html");
-    });
-  });
+      res.sendFile(path.join(__dirname, "../public/admin.html"));
+    })
+});
 
 module.exports = router;
