@@ -1,0 +1,116 @@
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+		<a class="navbar-brand" href="#">Trail Mix</a>
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item active">
+				<a class="nav-link" href="../">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="./admin">Admin <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="#">Disabled</a>
+			</li>
+		</ul>
+			<a class="login-link" href="../logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+	</div>
+</nav>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-11 mx-auto">
+			<div class="card">
+					<div class="card-header">
+						{{#unless isLoggedIn}}
+							Welcome! Please log in!
+						{{/unless}}
+						{{#if isLoggedIn}}
+							Welcome, {{userinfo.user.name}}!
+						{{/if}}
+					</div>
+				<div class="card-body">
+					<h4 class="card-title">Your Adventures</h4>
+					{{#unless isLoggedIn}}
+						<h6 class="card-text">Log in to manage your adventures.</h6>
+					{{/unless}}
+					{{#if isLoggedIn}}
+						<h6 class="card-text">Manage your existing adventures here.</h6>
+					{{/if}}
+				</div>
+				<ul class="list-group">
+					{{#each Customer.Adventures}}
+						<li>{{adventure_name}}</li>
+						<ul>
+							<li>Adventure Verbiage 1: {{adventure_verbiage1}}</li>
+							<li>Adventure Verbiage 2: {{adventure_verbiage2}}</li>
+							<li>Adventure Verbiage 3: {{adventure_verbiage3}}</li>
+							<li>Adventure Verbiage 4: {{adventure_verbiage4}}</li>
+							<li>Adventure Verbiage 5: {{adventure_verbiage5}}</li>
+							<li>Adventure Image 1:</li><br>
+							<img src="{{adventure_image1}}" class="ad-image">
+							<li>Adventure Image 2:</li><br>
+							<img src="{{adventure_image2}}" class="ad-image">
+							<li>Adventure Image 3:</li><br>
+							<img src="{{adventure_image3}}" class="ad-image">
+						</ul>
+					{{/each}}
+					<!-- <li class="list-group-item"></li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-11 mx-auto">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Add Adventure</h4>
+				</div>
+				<div class="col-md-11 mx-auto">
+					<form>
+						<div class="form-group">
+							<label for="adventure_name">Adventure Name</label>
+							<input type="text" class="form-control" id="adventure_name" aria-describedby="adventureName" placeholder="Name of Adventure">
+						</div>
+						<div class="form-group">
+							<label for="adventure_verbiage1">Adventure Verbiage 1</label>
+							<input type="text" class="form-control" id="adventure_verbiage1">
+						</div>
+						<div class="form-group">
+							<label for="adventure_verbiage2">Adventure Verbiage 2</label>
+							<input type="text" class="form-control" id="adventure_verbiage2">
+						</div>
+						<div class="form-group">
+							<label for="adventure_verbiage3">Adventure Verbiage 3</label>
+							<input type="text" class="form-control" id="adventure_verbiage3">
+						</div>
+						<div class="form-group">
+							<label for="adventure_verbiage4">Adventure Verbiage 4</label>
+							<input type="text" class="form-control" id="adventure_verbiage4">
+						</div>
+						<div class="form-group">
+							<label for="adventure_verbiage5">Adventure Verbiage 5</label>
+							<input type="text" class="form-control" id="adventure_verbiage5">
+						</div>
+						<div class="form-group">
+							<label for="adventure_image1">Adventure Image 1</label>
+							<input type="file" accept="image/*" class="form-control-file" id="adventure_image1">
+						</div>
+						<div class="form-group">
+							<label for="adventure_image2">Adventure Image 2</label>
+							<input type="file" accept="image/*" class="form-control-file" id="adventure_image1">
+						</div>
+						<div class="form-group">
+							<label for="adventure_image3">Adventure Image 3</label>
+							<input type="file" accept="image/*" class="form-control-file" id="adventure_image3">
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -12,36 +12,30 @@ router.get("/", function(req, res) {
 
 router.get("/admin", function(req, res) {
   // this needs to go to login page if not logged in
+  var isLoggedIn;
+  var userinfo;
+  if (req.session.passport) {
+    isLoggedIn = true;
+  }
+  else {
+    isLoggedIn = false;
+  }
   db.Customer.findOne({
+    include: [db.Adventure],
     where: {
-      customer_email: req.userinfo.email
+      cust_email: req.session.passport.user.email
     }
   }).then(function(dbPost) {
-    return dbPost;
-  }).then(db.Adventures.findAll({
-    where: {
-      CustomerId: dbPost.id
-    }
-  })).then(function(data) {
     // send all adventures for that customer_id
-    res.sendFile(path.join(__dirname, "../public/admin.html"), {
-      isLoggedIn: !!req.userinfo,
-      userinfo: req.userinfo
-    });
+    var hbObject = {
+      Customer: dbPost,
+      isLoggedIn: isLoggedIn,
+      userinfo: req.session.passport
+    };
+    res.render("admin", hbObject);
   })
   
 });
-
-//router.get("/admin/:id", function(req, res) {
-//  db.Adventures.findAll({
-//    where: {
-//      customer_id: req.params.id
-//    }
-//  })
-//  .then(function(data) {
-//      // send all adventures for that customer_id
-//  })
-//});
 
 router.post("/admin", function(req, res) {
     var newAdv = req.body;
