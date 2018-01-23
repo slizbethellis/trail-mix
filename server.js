@@ -12,9 +12,9 @@ const oidc = new ExpressOIDC({
     issuer: 'https://dev-851045-admin.oktapreview.com/oauth2/default',
     client_id: '0oado5o8navAe4p630h7',
     client_secret: '2SjkVo-ZrYEN5X-yt0KkIqyOaPVwtRhrM1z9uXvV',
-    redirect_uri: 'http://localhost:8080/authorization-code/callback' || 'https://shrouded-beach-16284.herokuapp.com/authorization-code/callback',
+    redirect_uri:  /*'https://shrouded-beach-16284.herokuapp.com/authorization-code/callback' || */'http://localhost:8080/authorization-code/callback',
     scope: 'openid profile email'
-  });
+});
 
 var db = require("./models");
 
@@ -49,9 +49,14 @@ app.use("/", routes);
 // ExpressOIDC will attach handlers for the /login and /authorization-code/callback routes
 app.use(oidc.router);
 
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
+
 // Syncing our sequelize models and then starting our Express app
 oidc.on('ready', () => {
-    db.sequelize.sync({ force: true }).then(function() {
+    db.sequelize.sync({ force: false }).then(function() {
         app.listen(PORT, function() {
             console.log("App listening on PORT " + PORT);
         });
@@ -60,3 +65,5 @@ oidc.on('ready', () => {
 oidc.on('error', err => {
     console.log('Unable to configure ExpressOIDC', err);
 });
+
+module.exports = oidc;

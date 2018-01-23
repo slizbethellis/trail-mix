@@ -5,21 +5,103 @@
 	<meta charset="UTF-8">
 	<title>Trail Mix Admin</title>
 	<!-- CSS & JS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+	<script src="https://use.fontawesome.com/0740194600.js"></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="assets/js/admin.js"></script>
 </head>
 
 <body>
-	<div class="container">
+	<!-- Nav Bar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+			<a class="navbar-brand" href="#">Trail Mix</a>
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./admin">Admin <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				</li>
+			</ul>
+				<a class="login-link" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<!-- Need to handlebar to show customer's adventures, plus delete option -->
+			<div class="col-md-11 mx-auto">
+				<div class="card">
+						<div class="card-header">
+								Welcome, User!
+							{{/if}}
+						</div>
+					<div class="card-body">
+						<h4 class="card-title">Your Adventures</h4>
+						<h6 class="card-text">Manage your existing adventures here.</h6>
+					</div>
+					<ul class="list-group list-group-flush">
+						<!-- <li class="list-group-item"></li> -->
+					</ul>
+				</div>
 			</div>
-      <div class="col-md-6 col-md-offset-3">
-        <!-- Need to show form to add new adventure - name, verbiage x5, images x3 -->
-      </div>
+		</div>
+		<div class="row">
+			<div class="col-md-11 mx-auto">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Add Adventure</h4>
+					</div>
+					<div class="col-md-11 mx-auto">
+						<form>
+							<div class="form-group">
+								<label for="adventure_name">Adventure Name</label>
+								<input type="text" class="form-control" id="adventure_name" aria-describedby="adventureName" placeholder="Name of Adventure">
+							</div>
+							<div class="form-group">
+								<label for="adventure_verbiage1">Adventure Verbiage 1</label>
+								<input type="text" class="form-control" id="adventure_verbiage1">
+							</div>
+							<div class="form-group">
+								<label for="adventure_verbiage2">Adventure Verbiage 2</label>
+								<input type="text" class="form-control" id="adventure_verbiage2">
+							</div>
+							<div class="form-group">
+								<label for="adventure_verbiage3">Adventure Verbiage 3</label>
+								<input type="text" class="form-control" id="adventure_verbiage3">
+							</div>
+							<div class="form-group">
+								<label for="adventure_verbiage4">Adventure Verbiage 4</label>
+								<input type="text" class="form-control" id="adventure_verbiage4">
+							</div>
+							<div class="form-group">
+								<label for="adventure_verbiage5">Adventure Verbiage 5</label>
+								<input type="text" class="form-control" id="adventure_verbiage5">
+							</div>
+							<div class="form-group">
+								<label for="adventure_image1">Adventure Image 1</label>
+								<input type="file" accept="image/*" class="form-control-file" id="adventure_image1">
+							</div>
+							<div class="form-group">
+								<label for="adventure_image2">Adventure Image 2</label>
+								<input type="file" accept="image/*" class="form-control-file" id="adventure_image1">
+							</div>
+							<div class="form-group">
+								<label for="adventure_image3">Adventure Image 3</label>
+								<input type="file" accept="image/*" class="form-control-file" id="adventure_image3">
+							</div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

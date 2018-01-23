@@ -2,6 +2,11 @@ body {
   background: url("../img/background1.png");
 }
 
+li {
+  margin-left: 35px;
+  padding: 5px;
+}
+
 .login-link {
   color: gray;
 }
@@ -24,4 +29,9 @@ body {
   font-family: 'Bowlby One SC', cursive;
   color: #7a5120;
   margin-top: 10px;
+}
+
+.ad-image {
+  width: 300px;
+  margin: -15px auto 30px 30px;
 }
