@@ -73,8 +73,8 @@ var choices = [
 	}
 ];
 
-var left = ["../public/assets/img/school.jpg","../public/assets/img/biker-on-ramp.png","../public/assets/img/strawberry2.png","../public/assets/img/cave.jpg","../public/assets/img/clearing.png"];
-var right =  ["../public/assets/img/treasure-chest.png","../public/assets/img/mossy-log.png","../public/assets/img/bobcat2.png","../public/assets/img/truck.png","../public/assets/img/werewolf.png"];
+var left = ["/assets/img/school.jpg","/assets/img/biker-on-ramp.png","/assets/img/strawberry2.png","/assets/img/cave.jpg","/assets/img/clearing.png"];
+var right =  ["/assets/img/treasure-chest.png","/assets/img/mossy-log.png","/assets/img/bobcat2.png","/assets/img/truck.png","/assets/img/werewolf.png"];
 
 
 
@@ -82,7 +82,7 @@ var num = 0;
 var artifact = false;
 var recieved = false;
 var lost = false;
-var img = "<img src='../public/assets/img/artifact.png'>"
+var img = "<img src='/assets/img/artifact.png'>"
 
 
 
@@ -166,8 +166,8 @@ $("#right").attr("src", right[0]);
  		$("#display").html(choiceAnswers[2].A)
  		$("#choice1").html(choices[2].C).val(choices[2].C);
  		$("#choice2").html(choices[2].D).val(choices[2].D);
- 		$("#left").attr("src", "../public/assets/img/strawberry-patch.png");
- 		$("#right").attr("src", "../public/assets/img/snake-strawberry.png");
+ 		$("#left").attr("src", "/assets/img/strawberry-patch.png");
+ 		$("#right").attr("src", "/assets/img/snake-strawberry.png");
  		num --;
  	}else if(choice === choices[3].A){
  		$("#choiceButton").show();
@@ -175,7 +175,7 @@ $("#right").attr("src", right[0]);
  		$("#display").html(choiceAnswers[3].A)
  		$("#choice1").html(choices[3].C).val(choices[3].C);
  		$("#choice2").html(choices[3].D).val(choices[3].D);
- 		$("#right").attr("src", "../public/assets/img/werewolf.png");
+ 		$("#right").attr("src", "/assets/img/werewolf.png");
  		num --;
  	}
 
@@ -212,16 +212,16 @@ $("#right").attr("src", right[0]);
  	if(artifact === false){
  		$("#display").html(choiceAnswers[4].false);
  		$("#finish").hide();
- 		$("#left").attr("src", "../public/assets/img/loser-hand.png");
- 		$("#right").attr("src", "../public/assets/img/loser-lisa.png");
+ 		$("#left").attr("src", "/assets/img/loser-hand.png");
+ 		$("#right").attr("src", "/assets/img/loser-lisa.png");
 
  	}else{
  		$("#display").html(choiceAnswers[4].true);
  		$("#continue").hide();
  		$("#end").show();
  		$("#finish").hide();
- 		$("#left").attr("src", "../public/assets/img/bushes.png");
- 		$("#right").attr("src", "../public/assets/img/pug.jpg");
+ 		$("#left").attr("src", "/assets/img/bushes.png");
+ 		$("#right").attr("src", "/assets/img/pug.jpg");
 
 
  	}
@@ -231,13 +231,13 @@ $("#right").attr("src", right[0]);
  	$("#display").html(storyLine[5].story);
  	$("#end").hide();
  	$("#collect").show()
- 	$("#left").attr("src", "../public/assets/img/mcdonalds-cashier.jpg");
- 	$("#right").attr("src", "../public/assets/img/2boys.jpg");
+ 	$("#left").attr("src", "/assets/img/mcdonalds-cashier.jpg");
+ 	$("#right").attr("src", "/assets/img/2boys.jpg");
  });
 
  $("#collect").on("click", function(){
  	var html = "<h2>Congratulations!! You win a coupon for a cheeseburger</h2>";
- 	html += '<img src="../public/assets/img/cheeseburger_1.jpg">';
+ 	html += '<img src="/assets/img/cheeseburger_1.jpg">';
  	$("#display").html(html);
  	$("#collect").hide();
  	$("#left").hide();
