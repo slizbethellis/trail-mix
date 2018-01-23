@@ -7,7 +7,7 @@ var db = require("../models");
 
 // WORK IN PROGRESS
 router.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/test.html"));
+  res.render("index", {secretWord: "kittens"});
 });
 
 router.get("/admin", function(req, res) {
