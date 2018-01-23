@@ -25,6 +25,6 @@
     "express-session": "^1.15.6",
     "mysql2": "^1.5.1",
     "path": "^0.12.7",
-    "sequelize": "^4.31.1"
+    "sequelize": "^4.32.1"
   }
 }
