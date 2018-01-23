@@ -2,6 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+const fileUpload = require('express-fileupload');
 const session = require('express-session');
 const { ExpressOIDC } = require('@okta/oidc-middleware');
 
@@ -53,6 +54,9 @@ app.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
 });
+
+//Set express to use fileUpload
+app.use(fileUpload());
 
 // Syncing our sequelize models and then starting our Express app
 oidc.on('ready', () => {

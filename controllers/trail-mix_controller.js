@@ -34,11 +34,41 @@ router.get("/admin", function(req, res) {
     };
     res.render("admin", hbObject);
   })
-  
+
 });
 
 router.post("/admin", function(req, res) {
     var newAdv = req.body;
+    var customer = db.Customers.findall({
+      where: {
+        customer_id: req.params.id
+      }
+    });
+    var custName = customer.cust_name;
+    var custFolder = "../customer-images/" + custName;
+
+    var cust_logo = req.files.cust_logo;
+    let adventure_image1 = req.files.adventure_image1;
+    let adventure_image2 = req.files.adventure_image2;
+    let adventure_image3 = req.files.adventure_image3;
+
+    // move and rename
+    cust_logo.mv(custFolder + "/" + custName + "Logo.jpg", function(err) {
+    if (err)
+      return res.status(500).send(err);
+    });
+    adventure_image1.mv(custFolder + "/" + newAdv.adventure_name + "-image1.jpg", function(err) {
+    if (err)
+      return res.status(500).send(err);
+    });
+    adventure_image2.mv(custFolder + "/" + newAdv.adventure_name + "-image2.jpg", function(err) {
+    if (err)
+      return res.status(500).send(err);
+    });
+    adventure_image3.mv(custFolder + "/" + newAdv.adventure_name + "-image3.jpg", function(err) {
+    if (err)
+      return res.status(500).send(err);
+    });
 
     db.Adventures.create({
       adventure_name: newAdv.adventure_name,
@@ -47,12 +77,12 @@ router.post("/admin", function(req, res) {
       adventure_verbiage3: newAdv.adventure_verbiage3,
       adventure_verbiage4: newAdv.adventure_verbiage4,
       adventure_verbiage5: newAdv.adventure_verbiage5,
-      adventure_image1: newAdv.adventure_image1,
-      adventure_image2: newAdv.adventure_image2,
-      adventure_image3: newAdv.adventure_image3,
+      adventure_image1: custFolder + "/" + newAdv.adventure_name + "-image1.jpg",
+      adventure_image2: custFolder + "/" + newAdv.adventure_name + "-image2.jpg",
+      adventure_image3: custFolder + "/" + newAdv.adventure_name + "-image3.jpg",
     }).then(function () {
       // back to /admin/:id
-      res.sendFile(path.join(__dirname, "../public/admin.html"));
+      res.render("admin", hbObject);
     })
 });
 
