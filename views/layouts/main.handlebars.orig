@@ -11,7 +11,8 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/admin.js"></script>
-    <script src="/assets/js/game.js"></script>
+<<<<<<< HEAD
+=======
     <script src="/assets/js/game.js"></script>
 >>>>>>> ec4e5f3ea6018ee2e7de0c14e31c5693d7aa53f6
   </head>
