@@ -1,0 +1,46 @@
+body{
+	background-image: url("background1.png");
+}
+
+#left{
+	width: 293px;
+    height: 228px;
+    margin-top: 54%;
+}
+
+#right{
+	width: 293px;
+    height: 228px;
+    margin-top: 54%;
+}
+
+#display{
+	background-image: url("left_bg.jpg");
+	padding: 3%;
+	font-family: 'IM Fell English', serif;
+	line-height: 1.6;
+	font-size: 19px;
+	margin-top: 4%;
+}
+
+#logo{
+	height: 150px;
+}
+#submit, #continue{
+	font-family: 'IM Fell English', serif;
+	font-size: 19px;
+	padding: 2%;
+}
+
+#choiceButton{
+	margin-bottom: 4%;
+}
+
+#extraButtons{
+	margin-bottom: 4%;
+}
+
+h3{
+	font-family: 'IM Fell English', serif;
+	font-weight: bold;
+}

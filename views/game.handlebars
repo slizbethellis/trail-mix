@@ -1,500 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-      <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
-      <script src="booklet/jquery.easing.1.3.js" type="text/javascript"></script>
-      <script src="booklet/jquery.booklet.1.1.0.min.js" type="text/javascript"></script>
-      <link href="booklet/jquery.booklet.1.1.0.css" type="text/css" rel="stylesheet" media="screen" />
-      <link rel="stylesheet" href="book.css" type="text/css" media="screen"/>
-      <link href="https://fonts.googleapis.com/css?family=IM+Fell+English" rel="stylesheet">
-  </head>
-  <body>
-    <div class="book_wrapper">
-			<a id="next_page_button"></a>
-			<a id="prev_page_button"></a>
-			<div id="loading" class="loading">Loading pages...</div>
-			<div id="mybook" style="display:none;">
-				<div class="b-load">
-          <!-- Page 1 Story-->
-					<div id="page-1">
-            <img src="img/trail mix logo.png" alt="" height="150px"/>
-            <br>
-            <br>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;It is the first day of June, 2013, you push through giant square doors with the clanging of the school bell in your ear. You victoriously emerge to the clear blue sky as another year of chalkboards, notebooks, and gym class has come to end.  There is only one way to celebrate this momentous occasion, a {{models.Adventure.adventure_verbiage1}} from {{models.Customer.cust_name}}!  You rush to your bike with excitement, hopping on and kicking the pedals into gear while rolling straight for the Brushy Bush Trail.</p>
-					</div>
-          <!-- Page 2 Story-->
-					<div id="page-2">
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Just before you start your journey into the hollow, you happen to glance down and notice a very strange box.  You walk to the box and push away the leaves to find it covered with a strange writing that you’ve never seen before.  It was at that moment a bullfrog-like grumble roiled in your stomach...</p>
-            <br>
-            <br>
-            <img src="img/forest.png" alt=""/>
-					</div>
-          <!-- Page 3 Open chest or keep going-->
-          <div id="page-3">
-						<h1>What Would You Like To Do?</h1>
-						<a href="" class="article">A</a>
-            <p>Appease your curiosity and look inside?</p>
-            <img src="img/treasure-chest.png" alt="" height="250px"/>
-            <br>
-            <br>
-						<a href="" class="article">B</a>
-            <p>Appease your hunger and leave?</p>
-					</div>
-          <!-- Page 4 Open Chest-->
-					<div id="page-4">
-            <h1>Appease your curiosity and look inside</h1>
-            <br>
-            <br>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;You open the latch to reveal an ancient artifact resembling the old Wolfman Jack cave. It has dozens of rubies and gems inserted around the edges with one central diamond that appears to emit a faint glow from its middle.  You exclaim &ldquo;Woah Dude!&rdquo; and put the artifact in your pocket.</p>
-					</div>
-          <!-- Page 5 Open chest-->
-					<div id="page-5">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-						<img src="img/open-chest.png" alt="" height="250"/>
-					</div>
-          <!-- Page 6 Keep Going-->
-					<div id="page-6">
-            <h1>Appease your hunger and leave</h1>
-            <br>
-            <br>
-						<img src="img/forest2.png" alt=""/>
-					</div>
-          <!-- Page 7 Keep Going -->
-					<div id="page-7">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;After standing back up, you exclaim &ldquo;I don’t have time play with toy chests! My {{models.Adventure.adventure_verbiage1}} awaits!&rdquo;</p>
-					</div>
-          <!-- Page 8 Lose-->
-					<div id="page-8">
-					</div>
-          <!-- Page 9 Lose-->
-					<div id="page-9">
-            <h1>SORRY YOU LOSE!</h1>
-            <p>You never picked up the artifact.  Please play again to try to win a coupon to your favorite restaurant!</p>
-            <img src="img/loser-lisa.png" alt="" />
-					</div>
-          <!-- Page 10 Story-->
-					<div id="page-10">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;You get back on your bike and start riding down the trail, the schoolyard noises slowly dissipating into the background as the shadowy cover of the maples encourage the feelings of adventure to creep in.  As your imagination turns your bike into a hover ship, sailing through the forests of an alien planet in galaxy far away, you approach the raging river of lava called Tom’s Creek.  As you squint your eyes, your mainframe calculates the possible routes to cross the wet inferno and spits back two options.  The bike ramp you and Bobby Jenkins forged in the 4th grade, or the mossy log that stretches across the abyss.</p>
-            <img src="img/mossy-log.png" alt="" height="150" />
-					</div>
-          <!-- Page 11 Choice-->
-					<div id="page-11">
-            <br>
-            <br>
-						<img src="img/bike-ramp.png" alt="" />
-            <h1>Which route would you like to take?</h1>
-						<a href="" class="article">A</a>
-            <p>The bike ramp?</p>
-            <br>
-            <br>
-						<a href="" class="article">B</a>
-            <p>The mossy log?</p>
-					</div>
-          <!-- Page 12 Bike Ramp-->
-					<div id="page-12">
-            <h1>The Bike Ramp</h1>
-            <br>
-            <br>
-            <br>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;You kick your pedals into overdrive, gaining the velocity of 1,000 rocket boosters, enabling you to peer at the scene below while crossing the stream of fire.  While landing you absorb the impact and roll away yelling &ldquo;{{models.Customer.cust_name}} here I come!&rdquo;</p>
-					</div>
-          <!-- Page 13 Bike Ramp-->
-					<div id="page-13">
-            <br>
-            <br>
-            <br>
-            <br>
-						<img src="img/biker-on-ramp.png" alt="" />
-					</div>
-          <!-- Page 14 Mossy Log-->
-					<div id="page-14">
-            <br>
-            <br>
-            <br>
-            <br>
-						<img src="img/mossy-log2.png" alt="" />
-					</div>
-          <!-- Page 15 Mossy Log-->
-					<div id="page-15">
-            <h1>The Mossy Log</h1>
-            <br>
-            <br>
-            <br>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;The memory of the distinct taste of dirt that filled your mouth the last time you played Evel Knievel causes you to steer toward the mossy log.  You pick up your bike and step onto the log.  As you take 1 step...2 steps...3...WHOOOPS!  You slip on a piece of slime and plunge into the fire below.  Upon impact, the visions of alien worlds and lava streams recede as you find yourself soaking wet, lying in the creek.  As you drip your way out of the water and find your bike and pull the kickstand out of the mud, you remind yourself that at {{models.Adventure.adventure_verbiage2}} awaits and keep riding down the path.</p>
-					</div>
-          <!-- Page 16 Lose-->
-					<div id="page-16">
-					</div>
-          <!-- Page 17 Lose-->
-					<div id="page-17">
-            <h1>SORRY YOU LOST!</h1>
-            <p>You lost the artifact when you fell into the creek.  Please play again to try to win a coupon to your favorite restaurant!</p>
-            <br>
-            <br>
-            <img src="img/loser-hand.png" alt="" />
-					</div>
-          <!-- Page 18 Story -->
-          <div id="page-18">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;As you continue on down the trail you watch and listen to a duo of squirrels occasionally squawking at each other while playing ring around the pine tree.  Up ahead you spot the strawberry bushes blooming with what you and your buddies have dubbed &ldquo;Nature’s Pez&rdquo;.  You think about how nice a small appetizer might be when you spot a small bobcat trotting along the side of the path.  Your mind swirls with indecision; you love strawberries, but you have never seen a bobcat before...</p>
-            <img src="img/bobcat.png" alt="" height="200px"/>
-          </div>
-          <!-- Page 19 Choice between strawberries and bobcat -->
-          <div id="page-19">
-            <h1>Which Do You Choose?</h1>
-						<a href="" class="article">A</a>
-            <p>Eat strawberries?</p>
-            <img src="img/strawberry-patch.png" alt="" height="250px"/>
-            <br>
-            <br>
-						<a href="" class="article">B</a>
-            <p>Check out the bobcat?</p>
-          </div>
-          <!-- Page 20 Strawberries and Choice -->
-          <div id="page-20">
-            <h1>Eat Strawberries</h1>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Despite the coolness factor of the bobcat, there are enough YouTube videos to watch bobcats for days.  You cannot, however, web search that delicious strawberry flavor into your mouth.  You climb to the edge of the bushes and reach for a berry when you hear a slithery hiss and rattle just in front of you.  A snake the size of a fireman’s hose is flicking its black tongue and shaking its tail, waiting for your next move.</p>
-            <img src="img/strawberry2.png" alt="" />
-          </div>
-          <!-- Page 21 Strawberries and Choice -->
-          <div id="page-21">
-            <br>
-            <br>
-						<img src="img/snake-strawberry.png" alt="" />
-            <h1>What Will You Do?</h1>
-						<a href="" class="article">A</a>
-            <p>Throw a rock at it?</p>
-            <br>
-            <br>
-						<a href="" class="article">B</a>
-            <p>Slowly walk backwards and sneak away?</p>
-          </div>
-          <!-- Page 22 Bobcat -->
-          <div id="page-22">
-            <h1>Check out the Bobcat</h1>
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Despite your desire for fresh strawberries, you decide you absolutely cannot miss your chance to see a real bobcat.  Unfortunately, before you even realize, the bobcat disappears!  &ldquo;Oh no!! Come back!!&rdquo; you exclaim as you pump your pedals as fast as you can, streamlining down the path in desperation for that one glance, unaware of the large log protruding onto the path.  You slam tire first into it and get flung into the air as your bike goes vertical and you land with a thud.  As you get up and wipe yourself clean; the bobcat is nowhere to be found.  You shrug your shoulders and mutter &ldquo;bummer dude&rdquo;, as you hop back on your bike and keep riding.</p>
-          </div>
-          <!-- Page 23 Bobcat -->
-          <div id="page-23">
-            <br>
-            <br>
-            <br>
-            <br>
-            <img src="img/bobcat2.png" alt="" />
-          </div>
-          <!-- Page 24 Lose -->
-          <div id="page-24">
-          </div>
-          <!-- Page 25 Lose -->
-          <div id="page-25">
-            <h1>SORRY YOU LOSE!</h1>
-            <p>You lost the artifact when you fell off your bike.  Please play again to try to win a coupon to your favorite restaurant!</p>
-            <br>
-            <br>
-            <img src="img/loser-stamp.png" alt="" />
-          </div>
-          <!-- Page 26 Throw a Rock -->
-          <div id="page-26">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <img src="img/baseball.png" alt="" />
-          </div>
-          <!-- Page 27 Throw a Rock -->
-          <div id="page-27">
-            <h1>Throw a Rock at it</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Unfazed, you decide to pick up a large rock and hurl it at the snake, wildly missing the target. The snake immediately starts slithering towards you; its head upright in a striking position.  You turn and run only to make it a few feet before you trip over a large root sticking out of the ground.  You tuck and roll straight back to your feet, taking four long strides to reach your bike and speed away thinking &ldquo;so this is why I didn’t make the baseball team!&rdquo;.</p>
-          </div>
-          <!-- Page 28 Back away slowly -->
-          <div id="page-28">
-            <h1>Slowly Back Away</h1>
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;The sound of the rattle reminds you about your Uncle Junior getting bitten in the behind and the hospital trip that ensued.  You decide that you are in no mood to sit on a inflatable donut and slowly sneak away, leaving the snake and strawberries behind.  &ldquo;Thankfully&rdquo;, you think to yourself, &ldquo;{{models.Customer.cust_name}} has a {{models.Adventure.adventure_verbiage3}} to satisfy my sweet tooth!&rdquo;</p>
-          </div>
-          <!-- Page 29 Back away slowly -->
-          <div id="page-29">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <img src="img/backing-away.png" alt="" />
-          </div>
-          <!-- Page 30 Lose -->
-          <div id="page-30">
-          </div>
-          <!-- Page 31 Lose -->
-          <div id="page-31">
-            <h1>SORRY YOU LOSE!</h1>
-            <p>You lost the artifact when you tripped over the large root sticking out of the ground.  Please play again to try to win a coupon to your favorite restaurant!</p>
-            <img src="img/loser-lisa.png" alt="" />
-          </div>
-          <!-- Page 32 Story -->
-          <div id="page-32">
-             <p>&nbsp;&nbsp;&nbsp;&nbsp;As you round the next bend, you see the last leg of the forest.  Up ahead lies the fabled Wolfman Jack cave, the rumored home of your favorite campfire story, and your final destination {{models.Customer.cust_name}}. Nearby is a truck spinning its wheels in a mud hole.  After about three 360’s, the truck slides to a stop as the tires dig itself into a rut.  &ldquo;Must be some of the high-schoolers drinking soda pop in the woods&rdquo; you say as you wonder if you should try and help.</p>
-             <img src="img/cave.png" alt="" />
-          </div>
-          <!-- Page 33 Choice between forget truck and help -->
-          <div id="page-33">
-            <h1>Which Will You Do?</h1>
-						<a href="" class="article">A</a>
-            <p>Forget the truck and keep riding to Wolfman Jack’s Cave?</p>
-            <img src="img/truck.png" alt="" height="250px"/>
-            <br>
-            <br>
-						<a href="" class="article">B</a>
-            <p>Help the people in the truck?</p>
-          </div>
-          <!-- Page 34 Forget truck Story -->
-          <div id="page-34">
-            <h1>Forget The Truck</h1>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;After seeing the two clowns yelling at each other in the mud, you decide it wouldn’t be in your best interest to help.  You turn and make your way to the cave just ahead thinking about the stories that have shrouded the cave in mystery for nearly fifty years.  As the story goes, old farmer Jack was chased by a strange, red eyed wolf into the heart of the cave, never to be seen again.  Legend also has it from that point on the creature named Wolfman Jack  was said to be spotted from time to time snacking on naughty children like popcorn.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;You ride past the opening of the cave, as you shout, &ldquo;Wolfmen are wimps!&rdquo; with such bravado that it would make any school yard bully think twice.  As you continue on a few yards you hear low growl exclaim, &ldquo;WHO SAID THAT?&rdquo;  You turn and see the one and only Wolfman Jack, half wolf and half man, glancing around looking for the one responsible for disturbing his slumber.</p>
-          </div>
-          <!-- Page 35 Forget truck and Choice -->
-          <div id="page-35">
-						<img src="img/werewolf.png" alt="" height="250" />
-            <h1>What Will You Do?</h1>
-						<a href="" class="article">A</a>
-            <p>Hide in the bushes?</p>
-            <br>
-            <br>
-						<a href="" class="article">B</a>
-            <p>Run?</p>
-          </div>
-          <!-- Page 36 Help -->
-          <div id="page-36">
-            <h1>Help the People in the Truck</h1>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;You approach the two men with caution, considering you shouldn’t show up at {{models.Customer.cust_name}} covered in mud, and say &ldquo;Hi, my name is Doug&rdquo;.  The driver replies &ldquo;Hi, my name’s Tub and this here is Chub.  We were just doing ourselves some muddin’ and we done got stuck.. Do… ya mind giving us a hand?&rdquo;  &ldquo;Sure! I’ve earned five merit badges and I’m working on my sixth.&rdquo; you exclaim.  &ldquo;Um.. Sure.. Just get in the truck and tromp the gas while we push in the back&rdquo; replied Tub.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Excitedly you hop in the front seat, put your foot on the brake, and slide it into drive.  You hear Tub scream, &ldquo;GO GO GO!&rdquo; as you slam the pedal down.  The engine roars and the tires spin, and you notice a dark streak appear out of nowhere, tackling the two men behind you.  In the process it bumps the back of the truck and the machine surprisingly pulls itself out of the mud hole, running into the tree in front of it.
-            </p>
-          </div>
-          <!-- Page 37 Help -->
-          <div id="page-37">
-            <br>
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;You climb out of the truck and slip on the running board, tumbling to the ground into a pile of muddy leaves.  As you stand back up you realize that the brown streak was a half wolf half man standing over the two men.  It was the real Wolfman Jack!  You remind yourself of his legendary hunger for small children and take off running for the clearing up ahead.</p>
-            <img src="img/clearing.png" alt="" />
-          </div>
-          <!-- Page 38 Lose -->
-          <div id="page-38">
+<head>
+	<title>Test Game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English" rel="stylesheet">
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-          </div>
-          <!-- Page 39 Lose -->
-          <div id="page-39">
-            <h1>SORRY YOU LOSE!</h1>
-            <p>You lost the artifact when you slipped on the running board and fell into the pile of muddy leaves.  Please play again to try to win a coupon to your favorite restaurant!</p>
-            <br>
-            <br>
-            <img src="img/loser-hand.png" alt="" />
-          </div>
-          <!-- Page 40 hide -->
-          <div id="page-40">
-            <h1>Hide in the bushes</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <img src="img/bushes.png" alt="" />
-          </div>
-          <!-- Page 41 hide -->
-          <div id="page-41">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;As you turn, you see the thickest bush of mountain laurel you’ve ever seen in your life and decide to dive right in.  You hear the folks from the truck yell &ldquo;Dag nabit Chub, I said drive, not reverse! Drive!!&rdquo;  You notice that Wolfman Jack’s attention was now turned on the stranded hillbillies.  As the creature starts moving in the direction of the noise, you take off in a full sprint for the clearing just ahead, leaving your bike behind.</p>
-          </div>
-          <!-- Page 42 Run -->
-          <div id="page-42">
-            <h1>Run</h1>
-            <br>
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Panic overtakes you and you start running into a full sprint, trying desperately to put distance between you and the creature.  You glance back to see the red eyed gaze turn towards you.  You turn around just in time to get clotheslined by a branch, losing the artifact!  Your legs fly up in the air as you fall down on your back.  You gain your composure and roll to your feet, seeing Wolfman Jack in hot pursuit.  You turn and beeline it for the clearing up ahead.</p>
-          </div>
-          <!-- Page 43 Run -->
-          <div id="page-43">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <img src="img/running.png" alt="" />
-          </div>
-          <!-- Page 44 Story -->
-          <div id="page-44">
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;As you break into the clearing panting and wheezing, you see the {{models.Customer.cust_name}} sign just peeking over the tree line in the distance.  Maybe the smell of {{models.Adventure.adventure_verbiage4}} will distract the creature long enough for you to make your escape.  Just at that moment, you hear the snap and crack of sticks behind you.  You turn to see Wolfman Jack emerge from the forest.  Sensing him closing in, you veer left towards a hollow log just big enough to hide in.  You dive in and situate yourself in the middle as you hear his snarl on the other side of the bark.  You realize that you are now off the ground, being heaved into the air and your momentary weightlessness comes to an abrupt stop when you hit the ground.
-            </p>
-          </div>
-          <!-- Page 45 Story -->
-          <div id="page-45">
-            <br>
-            <br>
-            <img src="img/tree-hole.png" alt="" />
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;The log breaks apart into a million pieces and you lay there staring at the ground, momentarily stunned as a looming shadow covers you in its darkness.  You turn to see red eyes as a glob of wolf slobber rolls off your cheek.  &ldquo;So, this is it huh?&rdquo; you say to yourself.</p>
-          </div>
-          <!-- Page 46 Lose Story -->
-          <div id="page-46">
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;You rummage through your pockets and come up empty. &ldquo;If only I had that strange artifact&rdquo; you say to yourself, &ldquo;I bet that would make this monster go away.&rdquo;  After half way committing to putting your hands up in defense, Wolfman Jack stands upright staring down at you then rears his head back to let out a ghastly howl.  Taking one last glance at the sky above, you are grabbed by the leg and dragged helplessly back to the cave.  Leaving only the crows sitting in the trees, cawing away.  The End.  You lose...</p>
-          </div>
-          <!-- Page 47 Lose Story -->
-          <div id="page-47">
-            <br>
-            <br>
-            <br>
-            <br>
-            <img src="img/loser-quote.png" alt="" />
-          </div>
-          <!-- Page 48 Win Story -->
-          <div id="page-48">
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;It was at that moment, you feel your leg begin to heat up and you look down at the bulge in your pocket.  &ldquo;The artifact!&rdquo; you say to yourself as you reach in and wrap your fingers around the object.  You pull it out and it is now shining as bright as a star.  In an instant, the light seems to stream out of the object like an outreaching hand and completely cover the monster.  As you expect the worse, you hear the whimper of a small dog.  You open your eyes to see your neighbor’s missing pug, Mr. Jinks.  It looks at you quizzically and lets out a small bark as it takes off back into the woods towards your neighborhood.  &ldquo;Now I’m really confused&rdquo; you say to yourself as you stand back up and continue on to {{models.Customer.cust_name}}.</p>
-          </div>
-          <!-- Page 49 Win Story -->
-          <div id="page-49">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <img src="img/artifact.png" alt="" />
-          </div>
-          <!-- Page 50 Ending -->
-          <div id="page-50">
-            <br>
-            <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;You come bursting through the doors of {{models.Customer.cust_name}}, clothes covered in mud and hair slicked back by wolf spit.  You rush to the counter,  &ldquo;Can I get a {{models.Adventures.adventure_verbiage1}} with a {{models.Adventures.adventure_verbiage2}} and a {{models.Adventures.adventure_verbiage5}} pronto!&rdquo;  then quickly add &ldquo;You know what?  Make that two of each!&rdquo;  You pay the cashier and take your ticket with the number 52 and spot your two buddies, Aaron and Sean sitting at a table across the room.   &ldquo;You look like you’ve seen a ghost&rdquo; Aaron says as you take a seat.  &ldquo;More like a wolf!&rdquo; you reply.  &ldquo;A wolf!&rdquo; exclaimed Sean, &ldquo;You should see my sister every morning!  She’d turn a wolf to stone!&rdquo;  You all chuckle with laughter as you raise one eyebrow and lean forward with your elbows square on the table, &ldquo;You’re not going to believe what happened to me today!&rdquo; you whisper.   Just then the cashier yells out &ldquo;Number 52… Number 52 your order is ready.&rdquo;
-            </p>
-          </div>
-          <!-- Page 51 Coupon -->
-          <div id="page-51">
-          </div>
-				</div>
-			</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 text-center">
+			<!-- Handlebars Image -->
+			<img src="" alt="">
 		</div>
 
+		<div class="col-md-4 text-center">
+			<img id="logo" src="/assets/img/trail mix logo.png" alt="">
+		</div>
 
-        <!-- The JavaScript -->
+		<div class="col-md-4 text-center">
+			<!-- Handlebars Image -->
+			<img src="" alt="">
+		</div>
+	</div>
+</div>
 
-        <script type="text/javascript">
-        var $mybook 		= $('#mybook');
-  			$(function() {
+<div class="container">
 
-          var $bttn_next		= $('#next_page_button');
-				  var $bttn_prev		= $('#prev_page_button');
-  				var $loading		= $('#loading');
-  				var $mybook_images	= $mybook.find('img');
-  				var cnt_images		= $mybook_images.length;
-  				var loaded			= 0;
-  				//preload all the images in the book,
-  				//and then call the booklet plugin
+		<div class="col-md-3">
+			<img class="img-thumbnail" id="left" src="">
+		</div>
+		<div id="textDisplay" class="col-md-6">
+			<p id="display"></p>
+			<div class="text-center" id="choiceButton">
+				<h3>What do you choose?</h3>
+				<select class="form-control" id="choice">
+					<option value=""></option>
+					<option id="choice1" value="1"></option>
+					<option id="choice2" value="2"></option>
+					<br>
+				</select>
+				<br>
+				<button class="btn-success btn-md" id="submit">Submit Answer</button>
+			</div>
+			<div class="text-center">
+				<button class="btn-success btn-md" id="continue">Continue on</button>
+				<button class="btn-success btn-md" id="finish">!!!!!!!</button>
+				<button class="btn-success btn-md" id="end">End</button>
+				<button class="btn-success btn-md" id="collect">Collect Prize</button>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<img class="img-thumbnail" id="right" src="">
+		</div>
+	</div>
 
-  				$mybook_images.each(function(){
-  					var $img 	= $(this);
-  					var source	= $img.attr('src');
-  					$('<img/>').load(function(){
-  						++loaded;
-  						if(loaded == cnt_images){
-  							$loading.hide();
-                $bttn_next.show();
-							  $bttn_prev.show();
-  							$mybook.show().booklet({
-  								name:               null,                            // name of the booklet to display in the document title bar
-  								width:              800,                             // container width
-  								height:             500,                             // container height
-  								speed:              600,                             // speed of the transition between pages
-  								direction:          'LTR',                           // direction of the overall content organization, default LTR, left to right, can be RTL for languages which read right to left
-  								startingPage:       0,                               // index of the first page to be displayed
-  								easing:             'easeInOutQuad',                 // easing method for complete transition
-  								easeIn:             'easeInQuad',                    // easing method for first half of transition
-  								easeOut:            'easeOutQuad',                   // easing method for second half of transition
 
-  								closed:             true,                           // start with the book "closed", will add empty pages to beginning and end of book
-  								closedFrontTitle:   null,                            // used with "closed", "menu" and "pageSelector", determines title of blank starting page
-  								closedFrontChapter: null,                            // used with "closed", "menu" and "chapterSelector", determines chapter name of blank starting page
-  								closedBackTitle:    null,                            // used with "closed", "menu" and "pageSelector", determines chapter name of blank ending page
-  								closedBackChapter:  null,                            // used with "closed", "menu" and "chapterSelector", determines chapter name of blank ending page
-  								covers:             false,                           // used with  "closed", makes first and last pages into covers, without page numbers (if enabled)
-
-  								pagePadding:        10,                              // padding for each page wrapper
-  								pageNumbers:        true,                            // display page numbers on each page
-
-  								hovers:             false,                            // enables preview pageturn hover animation, shows a small preview of previous or next page on hover
-  								overlays:           false,                            // enables navigation using a page sized overlay, when enabled links inside the content will not be clickable
-  								tabs:               false,                           // adds tabs along the top of the pages
-  								tabWidth:           60,                              // set the width of the tabs
-  								tabHeight:          20,                              // set the height of the tabs
-  								arrows:             false,                           // adds arrows overlayed over the book edges
-  								cursor:             'pointer',                       // cursor css setting for side bar areas
-
-  								hash:               false,                           // enables navigation using a hash string, ex: #/page/1 for page 1, will affect all booklets with 'hash' enabled
-  								keyboard:           true,                            // enables navigation with arrow keys (left: previous, right: next)
-
-  								menu:               null,                            // selector for element to use as the menu area, required for 'pageSelector'
-  								pageSelector:       false,                           // enables navigation with a dropdown menu of pages, requires 'menu'
-  								chapterSelector:    false,                           // enables navigation with a dropdown menu of chapters, determined by the "rel" attribute, requires 'menu'
-
-  								shadows:            true,                            // display shadows on page animations
-  								shadowTopFwdWidth:  166,                             // shadow width for top forward anim
-  								shadowTopBackWidth: 166,                             // shadow width for top back anim
-  								shadowBtmWidth:     50,                              // shadow width for bottom shadow
-
-                  hash:               true,
-
-  								before:             function(){},                    // callback invoked before each page turn animation
-  								after:              function(){}                     // callback invoked after each page turn animation
-
-  							});
-
-  						}
-  					}).attr('src',source);
-  				});
-            console.log($mybook);
-
-            // $mybook.booklet("gotopage", 25);
-  			});
-
-          </script>
-  </body>
+</div>
+<script src="test.js"></script>
+</body>
 </html>
