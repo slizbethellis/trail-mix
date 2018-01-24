@@ -10,24 +10,13 @@ const { ExpressOIDC } = require('@okta/oidc-middleware');
 // Sets up the Express App
 var app = express();
 var PORT = process.env.PORT || 8080;
+
 const oidc = new ExpressOIDC({
     issuer: 'https://dev-851045-admin.oktapreview.com/oauth2/default',
-    client_id: '0oadr0d9mxDyWPDCt0h7',
-    client_secret: 'qgvteql3tVXdUYwWi4aDCnYy1qwDNTTqPs-L3F5_',
-    redirect_uri:  'https://shrouded-beach-16284.herokuapp.com/authorization-code/callback' /*|| 'http://localhost:8080/authorization-code/callback'*/,
-    scope: 'openid profile email',
-    routes: {
-        login: {
-            viewHandler: (req, res) => {
-                // Render your custom login page, you must create this view for your application and use the Okta Sign-In Widget
-                res.render('custom-login', {
-                    csrfToken: req.csrfToken(),
-                    myClientId: '0oadr0d9mxDyWPDCt0h7',
-                    baseUrl: 'https://dev-851045-admin.oktapreview.com/oauth2/default'
-                });
-            }
-        }
-    }
+    client_id: '0oado5o8navAe4p630h7',
+    client_secret: '2SjkVo-ZrYEN5X-yt0KkIqyOaPVwtRhrM1z9uXvV',
+    redirect_uri:  /*'https://shrouded-beach-16284.herokuapp.com/authorization-code/callback' ||*/ 'http://localhost:8080/authorization-code/callback',
+    scope: 'openid profile email'
 });
 
 var db = require("./models");
@@ -79,5 +68,3 @@ oidc.on('ready', () => {
 oidc.on('error', err => {
     console.log('Unable to configure ExpressOIDC', err);
 });
-
- oidc;
