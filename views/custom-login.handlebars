@@ -1,0 +1,36 @@
+<body>
+  <div id="app-container"></div>
+  <script type="text/javascript">
+    const signIn = new OktaSignIn({
+      baseUrl: '{{baseUrl}}',
+      clientId: '{{myClientId}}',
+      redirectUri: "https://shrouded-beach-16284.herokuapp.com/authorization-code/callback",
+      idps: [
+        {type: 'GOOGLE', id: '0oadoaphh1T4j0IOh0h7'},
+        {type: 'FACEBOOK', id: '0oadoalad4h3sheao0h7'}
+      ],
+      idpDisplay: 'SECONDARY',
+      authParams: {
+        display: 'page',
+        responseType: 'token'
+      } 
+    });
+    
+    signIn.renderEl({ el: '#app-container' }, (res) => {
+      var form = $('<form>', {
+        method: 'POST',
+        action: '/login'
+      });
+      $(document.body).append(form);
+      var sessionTokenField = $('<input type="hidden" name="sessionToken"/>');
+      var csrfTokenField = $('<input type="hidden" name="_csrf" value="{{csrfToken}}"/>');
+      sessionTokenField.val(res.session.token)
+      form.append(sessionTokenField);
+      form.append(csrfTokenField);
+      form.submit();
+    }, (err) => {
+      console.error(err);
+    });
+
+  </script>
+</body>
