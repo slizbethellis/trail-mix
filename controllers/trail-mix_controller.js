@@ -8,7 +8,7 @@ var db = require("../models");
 // returns if user is logged in
 var loggedIn = function(req) {
   var isLoggedIn;
-  if (req.session.passport) { isLoggedIn = true; }
+  if (req.userinfo) { isLoggedIn = true; }
   else { isLoggedIn = false; }
 
   return isLoggedIn;
