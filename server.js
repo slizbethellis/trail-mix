@@ -15,7 +15,7 @@ const oidc = new ExpressOIDC({
     issuer: 'https://dev-851045-admin.oktapreview.com/oauth2/default',
     client_id: '0oado5o8navAe4p630h7',
     client_secret: '2SjkVo-ZrYEN5X-yt0KkIqyOaPVwtRhrM1z9uXvV',
-    redirect_uri:  /*'https://shrouded-beach-16284.herokuapp.com/authorization-code/callback' ||*/ 'http://localhost:8080/authorization-code/callback',
+    redirect_uri:  'https://shrouded-beach-16284.herokuapp.com/authorization-code/callback' /*|| 'http://localhost:8080/authorization-code/callback'*/,
     scope: 'openid profile email'
 });
 
