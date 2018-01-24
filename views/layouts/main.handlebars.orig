@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/animate.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
+    <title>Trail Mix</title>
+    <script src="https://use.fontawesome.com/0740194600.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/admin.js"></script>
+<<<<<<< HEAD
+=======
+    <script src="/assets/js/game.js"></script>
+>>>>>>> ec4e5f3ea6018ee2e7de0c14e31c5693d7aa53f6
+  </head>
+  <body>
+      {{{ body }}}
+  </body>
+</html>
