@@ -28,7 +28,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
-app.use(express.static(path.join(__dirname + '/public')));
+app.use(express.static(path.join(__dirname + '/public/')));
 
 // Set Handlebars.
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
