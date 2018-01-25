@@ -15,7 +15,7 @@ body{
 }
 
 #display{
-	background-image: url("left_bg.jpg");
+	background-image: url("/assets/img/left_bg.jpg");
 	padding: 3%;
 	font-family: 'IM Fell English', serif;
 	line-height: 1.6;

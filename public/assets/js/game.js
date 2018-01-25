@@ -242,4 +242,4 @@ $("#right").attr("src", right[0]);
  	$("#collect").hide();
  	$("#left").hide();
  	$("#right").hide();
- })
+});
