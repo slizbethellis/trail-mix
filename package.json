@@ -20,10 +20,12 @@
   "dependencies": {
     "@okta/oidc-middleware": "0.0.15",
     "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
     "express": "^4.16.2",
     "express-fileupload": "^0.3.0",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "mocha": "^5.0.0",
     "mysql2": "^1.5.1",
     "path": "^0.12.7",
     "sequelize": "^4.31.1"
