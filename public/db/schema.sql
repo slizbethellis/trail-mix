@@ -1,15 +1,32 @@
-### DB Schema
+### Trailmix schema
+DROP DATABASE IF EXISTS trail_mix_dev;
 
-CREATE DATABASE burgers_db;
+CREATE DATABASE trail_mix_dev;
 
-USE burgers_db;
+USE trail_mix_dev;
 
-CREATE TABLE burgers
-(
+CREATE TABLE customers (
 	id int NOT NULL AUTO_INCREMENT,
-	burger_name varchar(255) NOT NULL,
-	devoured boolean,
-	date TIMESTAMP,
+  cust_email varchar(255) NOT NULL,
+  cust_name varchar(255) NOT NULL,
+  cust_password varchar(255) NOT NULL,
+  cust_logo varchar(255) NOT NULL,
+  adventures varchar(255),
+	cust_create_date DATETIME,
 	PRIMARY KEY (id)
 );
 
+CREATE TABLE adventures (
+  id int NOT NULL AUTO_INCREMENT,
+	cust_id int NOT NULL AUTO_INCREMENT,
+  adventure_verbiage1 varchar(255),
+  adventure_verbiage2 varchar(255),
+  adventure_verbiage3 varchar(255),
+  adventure_verbiage4 varchar(255),
+  adventure_verbiage5 varchar(255),
+  adventure_image1 varchar(255),
+  adventure_image2 varchar(255),
+  adventure_image3 varchar(255),
+  adventure_create_date DATETIME,
+  PRIMARY KEY (id)
+);

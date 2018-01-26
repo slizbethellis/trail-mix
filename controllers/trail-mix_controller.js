@@ -94,8 +94,8 @@ router.post("/admin", function(req, res) {
     // back to /admin/
     var hbObject = {
       Adventure: dbPost,
-      isLoggedIn: loggedIn(req),
-      userinfo: req.session.passport
+      // isLoggedIn: loggedIn(req),
+      userinfo: 1 //req.session.passport
     };
     res.render("admin", hbObject);
   })

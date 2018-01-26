@@ -1,6 +1,5 @@
-### Seeds for Burger
+### Trailmix seeds
 
-INSERT INTO burgers (id, burger_name, devoured) VALUES (1, 'Bacon Cheeseburger', false);
-INSERT INTO burgers (id, burger_name, devoured) VALUES (2, 'Shroom and Swiss Burger', false);
-INSERT INTO burgers (id, burger_name, devoured) VALUES (3, 'Juicy Lucy Burger', false);
-INSERT INTO burgers (id, burger_name, devoured) VALUES (4, 'Big Mac', false);
+INSERT INTO customers (id, cust_email , cust_name, cust_password, cust_logo) VALUES (1, "chipotae@gmail.com", "Chip-O-Tae", "password", "/assets/img/Chipotae.png");
+
+INSERT INTO adventures (id, cust_id, adventure_verbiage1, adventure_verbiage2, adventure_verbiage3, adventure_image1, adventure_image2) VALUES (1, 1, "Word1", "Word2", "Word3", "/assets/images/chipotae_img1.png", "/assets/images/chipotae_img2.png");
