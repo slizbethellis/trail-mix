@@ -3,6 +3,8 @@ A choose-your-own adventure game about a journey to a restaurant, which rewards 
 
 [Link to app's Heroku page](https://shrouded-beach-16284.herokuapp.com/)
 
+Created by Jenn Bono, Sarah Ellis, and Mark Verbeck
+
 #### Home Page
 This page displays available promotions, and when the user clicks on an icon, it takes them to a customized version of the adventure game based on their choice.
 
