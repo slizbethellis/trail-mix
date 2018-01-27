@@ -13,10 +13,6 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-      cust_password: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
       cust_logo: {
         type: DataTypes.STRING,
         allowNull: true
