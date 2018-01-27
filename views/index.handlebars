@@ -18,7 +18,12 @@
 				<!-- {{/if}} -->
 			</li>
     </ul>
-      <a class="login-link" href="./login"><i class="fa fa-sign-in" aria-hidden="true"></i> Admin Login</a>
+      {{#unless isLoggedIn}}
+        <a class="login-link" href="./login"><i class="fa fa-sign-in" aria-hidden="true"></i> Admin Login</a>
+      {{/unless}}
+      {{#if isLoggedIn}}
+        <a class="logout-link" href="./logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Admin Logout</a>
+      {{/if}}
   </div>
 </nav>
 

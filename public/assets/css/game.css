@@ -1,5 +1,5 @@
 body{
-	background-image: url("background1.png");
+	background-image: url("/assets/img/background1.png");
 }
 
 #left{
@@ -15,7 +15,7 @@ body{
 }
 
 #display{
-	background-image: url("left_bg.jpg");
+	background-image: url("/assets/img/left_bg.jpg");
 	padding: 3%;
 	font-family: 'IM Fell English', serif;
 	line-height: 1.6;
@@ -26,18 +26,28 @@ body{
 #logo{
 	height: 150px;
 }
-#submit, #continue{
+#submit, #continue, #finish, #end {
 	font-family: 'IM Fell English', serif;
 	font-size: 19px;
 	padding: 2%;
 }
 
 #choiceButton{
-	margin-bottom: 4%;
+	font-family: 'IM Fell English', serif;
+	font-size: 19px;
+	padding: 2%;
 }
 
 #extraButtons{
-	margin-bottom: 4%;
+	font-family: 'IM Fell English', serif;
+	font-size: 19px;
+	padding: 2%;
+}
+
+#try-again {
+	font-family: 'IM Fell English', serif;
+	font-size: 19px;
+	padding: 2%;
 }
 
 h3{

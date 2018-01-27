@@ -2,6 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var exphbs = require("express-handlebars");
 const fileUpload = require('express-fileupload');
 const session = require('express-session');
 const { ExpressOIDC } = require('@okta/oidc-middleware');
@@ -9,6 +10,7 @@ const { ExpressOIDC } = require('@okta/oidc-middleware');
 // Sets up the Express App
 var app = express();
 var PORT = process.env.PORT || 8080;
+
 const oidc = new ExpressOIDC({
     issuer: 'https://dev-851045-admin.oktapreview.com/oauth2/default',
     client_id: '0oado5o8navAe4p630h7',
@@ -26,11 +28,9 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
-app.use(express.static(path.join(__dirname + '/public')));
+app.use(express.static(path.join(__dirname + '/public/')));
 
 // Set Handlebars.
-var exphbs = require("express-handlebars");
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -41,14 +41,13 @@ app.use(session({
     saveUninitialized: false
 }));
 
+// ExpressOIDC will attach handlers for the /login and /authorization-code/callback routes
+app.use(oidc.router);
+
 // Routes
 var routes = require("./controllers/trail-mix_controller.js");
 
 app.use("/", routes);
-//require("./routes/html-routes.js")(app);
-
-// ExpressOIDC will attach handlers for the /login and /authorization-code/callback routes
-app.use(oidc.router);
 
 app.get('/logout', (req, res) => {
     req.logout();
@@ -69,5 +68,3 @@ oidc.on('ready', () => {
 oidc.on('error', err => {
     console.log('Unable to configure ExpressOIDC', err);
 });
-
-module.exports = oidc;
