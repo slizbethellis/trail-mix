@@ -28,18 +28,6 @@ module.exports = function(sequelize, DataTypes) {
       adventure_verbiage5: {
         type: DataTypes.STRING,
         allowNull: true
-      },
-      adventure_image1: {
-        type: DataTypes.STRING,
-        allowNull: true
-      },
-      adventure_image2: {
-        type: DataTypes.STRING,
-        allowNull: true
-      },
-      adventure_image3: {
-        type: DataTypes.STRING,
-        allowNull: true
       }
     });
 

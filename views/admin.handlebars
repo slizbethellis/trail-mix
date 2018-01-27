@@ -55,17 +55,11 @@
 					{{#each Customer.Adventures}}
 						<li>{{adventure_name}}</li>
 						<ul>
-							<li>Adventure Verbiage 1: {{adventure_verbiage1}}</li>
-							<li>Adventure Verbiage 2: {{adventure_verbiage2}}</li>
-							<li>Adventure Verbiage 3: {{adventure_verbiage3}}</li>
-							<li>Adventure Verbiage 4: {{adventure_verbiage4}}</li>
-							<li>Adventure Verbiage 5: {{adventure_verbiage5}}</li>
-							<li>Adventure Image 1:</li><br>
-							<img src="{{adventure_image1}}" class="ad-image">
-							<li>Adventure Image 2:</li><br>
-							<img src="{{adventure_image2}}" class="ad-image">
-							<li>Adventure Image 3:</li><br>
-							<img src="{{adventure_image3}}" class="ad-image">
+							<li>Adventure Verbiage 1 (food item): {{adventure_verbiage1}}</li>
+							<li>Adventure Verbiage 2 (food item): {{adventure_verbiage2}}</li>
+							<li>Adventure Verbiage 3 (dessert item): {{adventure_verbiage3}}</li>
+							<li>Adventure Verbiage 4 (food item): {{adventure_verbiage4}}</li>
+							<li>Adventure Verbiage 5 (food item): {{adventure_verbiage5}}</li>
 						</ul>
 					{{/each}}
 					<!-- <li class="list-group-item"></li> -->
@@ -80,42 +74,30 @@
 					<h4 class="card-title">Add Adventure</h4>
 				</div>
 				<div class="col-md-11 mx-auto">
-					<form>
+					<form id="advent-form">
 						<div class="form-group">
 							<label for="adventure_name">Adventure Name</label>
 							<input type="text" class="form-control" id="adventure_name" aria-describedby="adventureName" placeholder="Name of Adventure">
 						</div>
 						<div class="form-group">
-							<label for="adventure_verbiage1">Adventure Verbiage 1</label>
+							<label for="adventure_verbiage1">Adventure Verbiage 1 (food item)</label>
 							<input type="text" class="form-control" id="adventure_verbiage1">
 						</div>
 						<div class="form-group">
-							<label for="adventure_verbiage2">Adventure Verbiage 2</label>
+							<label for="adventure_verbiage2">Adventure Verbiage 2 (food item)</label>
 							<input type="text" class="form-control" id="adventure_verbiage2">
 						</div>
 						<div class="form-group">
-							<label for="adventure_verbiage3">Adventure Verbiage 3</label>
+							<label for="adventure_verbiage3">Adventure Verbiage 3 (dessert item)</label>
 							<input type="text" class="form-control" id="adventure_verbiage3">
 						</div>
 						<div class="form-group">
-							<label for="adventure_verbiage4">Adventure Verbiage 4</label>
+							<label for="adventure_verbiage4">Adventure Verbiage 4 (food item)</label>
 							<input type="text" class="form-control" id="adventure_verbiage4">
 						</div>
 						<div class="form-group">
-							<label for="adventure_verbiage5">Adventure Verbiage 5</label>
+							<label for="adventure_verbiage5">Adventure Verbiage 5 (food item)</label>
 							<input type="text" class="form-control" id="adventure_verbiage5">
-						</div>
-						<div class="form-group">
-							<label for="adventure_image1">Adventure Image 1</label>
-							<input type="file" accept="image/*" class="form-control-file" id="adventure_image1">
-						</div>
-						<div class="form-group">
-							<label for="adventure_image2">Adventure Image 2</label>
-							<input type="file" accept="image/*" class="form-control-file" id="adventure_image1">
-						</div>
-						<div class="form-group">
-							<label for="adventure_image3">Adventure Image 3</label>
-							<input type="file" accept="image/*" class="form-control-file" id="adventure_image3">
 						</div>
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</form>

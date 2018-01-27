@@ -1,3 +1,11 @@
+var customer;
+var verbiage1;
+var verbiage2;
+var verbiage3;
+var verbiage4;
+var verbiage5;
+
+
 var storyLine = [
 	{
 		story: `It is the first day of June, 2013, you push through giant square doors with the clanging of the school bell in your ear. You victoriously emerge to the clear blue sky as another year of chalkboards, notebooks, and gym class has come to end.  There is only one way to celebrate this momentous occasion, a ${verbiage1} from ${customer}!  You rush to your bike with excitement, hopping on and kicking the pedals into gear while rolling straight for the Brushy Bush Trail.  Just before you start your journey into the hollow, you happen to glance down and notice a very strange box.  You walk to the box and push away the leaves to find it covered with a strange writing that you&apos;ve never seen before.  It was at that moment a bullfrog-like grumble roiled in your stomach...`
