@@ -1,6 +1,8 @@
 # trail-mix
 A choose-your-own adventure game about a journey to a restaurant, which rewards the user with a coupon if they choose the correct path through the game.
 
+[Link to app's Heroku page](https://shrouded-beach-16284.herokuapp.com/)
+
 #### Home Page
 This page displays available promotions, and when the user clicks on an icon, it takes them to a customized version of the adventure game based on their choice.
 
