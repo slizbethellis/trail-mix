@@ -12,10 +12,11 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 const oidc = new ExpressOIDC({
-    issuer: 'https://dev-851045-admin.oktapreview.com/oauth2/default',
+    issuer: 'https://dev-851045.oktapreview.com/oauth2/default',
     client_id: '0oado5o8navAe4p630h7',
     client_secret: '2SjkVo-ZrYEN5X-yt0KkIqyOaPVwtRhrM1z9uXvV',
-    redirect_uri:  'https://shrouded-beach-16284.herokuapp.com/authorization-code/callback' /*|| 'http://localhost:8080/authorization-code/callback'*/,
+    redirect_uri:  'https://shrouded-beach-16284.herokuapp.com/authorization-code/callback'/*  || 'http://localhost:8080/authorization-code/callback' */,
+    appBaseUrl: 'https://shrouded-beach-16284.herokuapp.com'/*  || 'http://localhost:8080' */,
     scope: 'openid profile email'
 });
 

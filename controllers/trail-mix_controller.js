@@ -8,7 +8,7 @@ var db = require("../models");
 // returns if user is logged in
 var loggedIn = function(req) {
   var isLoggedIn;
-  if (req.userinfo) { isLoggedIn = true; }
+  if (req.userContext) { isLoggedIn = true; }
   else { isLoggedIn = false; }
 
   return isLoggedIn;
@@ -23,14 +23,14 @@ router.get("/admin", function(req, res) {
   db.Customer.findOne({
     include: [db.Adventure],
     where: {
-      cust_email: req.session.passport.user.email
+      cust_email: req.session.passport.user.userinfo.email
     }
   }).then(function(dbPost) {
     // send all adventures for that customer_id
     var hbObject = {
       Customer: dbPost,
       isLoggedIn: loggedIn(req),
-      userinfo: req.session.passport
+      userinfo: req.session.passport.user.userinfo.name
     };
     res.render("admin", hbObject);
   })
