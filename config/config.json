@@ -4,8 +4,7 @@
       "password": null,
       "database": "trail_mix_dev",
       "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
+      "dialect": "mysql"
     },
     "test": {
       "use_env_variable": "JAWSDB_URL",
